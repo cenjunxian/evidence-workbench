@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f8fb">
+  <title>循证文档研究工作台</title>
+  <link rel="stylesheet" href="/research-style.css?v=question-first-local-2-height">
+  <script defer src="/research-app.js?v=question-first-local-2-height"></script>
+</head>
+<body>
+<svg class="symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="i-quote" viewBox="0 0 24 24"><path d="M9 7H5v7h5V7c0-2 1-3 2-4M20 7h-4v7h5V7c0-2 1-3 2-4" transform="translate(-1 2)"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8l-5-5Z"/><path d="M14 3v5h5M8 12h8M8 16h6"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 15a3 3 0 0 1-3 3H8l-5 3V6a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3v9Z"/><path d="M7 8h9M7 12h6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M6 3h12l-2 6 3 4H5l3-4-2-6Zm6 10v8"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="m15 4 5 5M4 20l5-1L21 7l-5-5L4 14v6Z"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="m10 14 4-4M8 16l-1 1a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m0 12a4 4 0 0 0 6 0l5-5a4 4 0 0 0-6-6l-1 1" transform="translate(0 0) scale(.95)"/></symbol>
+<symbol id="brand-mark" viewBox="0 0 40 40"><path d="M9 7h11M9 7v18a5 5 0 0 0 5 5h14M31 33H20M31 33V15a5 5 0 0 0-5-5h-3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M15 16h10M15 21h7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="28" cy="30" r="4" fill="#70b5a1"/><path d="m26.5 30 1 1 2-2" stroke="#fff" stroke-width="1.3" fill="none" stroke-linecap="round"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">跳到主内容</a>
+<div class="shell">
+  <nav class="nav" aria-label="主导航">
+    <a class="brand" href="#home"><svg class="brand-mark" aria-hidden="true"><use href="#brand-mark"/></svg><span class="brand-name">循证文档研究工作台<small>LETSGO</small></span></a>
+    <div class="nav-links">
+      <button data-view="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v11h-6v-7H9v7H3Z"/></svg>首页</button>
+      <button data-view="workbench"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>工作台</button>
+      <button data-view="history"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg>历史记录</button>
+    </div>
+    <details class="nav-aux"><summary>帮助</summary><div class="nav-foot">
+      <button id="help-open" class="quiet">使用帮助</button>
+
+      <small>当前访客 · 24小时会话</small>
+    </div></details>
+  </nav>
+  <main id="main" tabindex="-1">
+    <section id="home" class="page home-page" hidden>
+      <div class="home-inner">
+      <header class="home-heading"><p>押金退还示例</p><button id="new-home" class="button primary">开始新咨询<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></header>
+      <div class="demo-notice"><strong>合成演示 · 非实时生成</strong><span>非真实咨询，不会带入你的新咨询</span></div>
+<div class="human-scene" id="human-scene">
+   <div class="question-zone">
+    <div class="question-bubble">
+     <div class="speaker"><span class="person" aria-hidden="true"><svg class="icon"><use href="#i-person"/></svg></span><span>你的问题</span></div>
+     <h1 class="human-question" id="home-question"><span data-value="lead">房东说要扣260元，</span><span class="second-line" data-value="rest">我该先问什么？</span></h1>
+    </div>
+    <div class="question-switch" aria-label="选择一个示例问题"><span class="switch-hint">也可以换个问题看看</span><button data-question="deduction" aria-pressed="true">这笔扣款先问什么<svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></button><button data-question="settlement" aria-pressed="false">押金什么时候退</button></div>
+   </div>
+   <article class="answer-island" id="home-answer" aria-labelledby="home-advice">
+    <div class="answer-header"><svg class="answer-mark" aria-hidden="true"><use href="#brand-mark"/></svg>现在可以先做什么</div>
+    <h2 id="home-advice" data-value="advice">先问清扣什么，再要对应的凭证。</h2>
+    <p data-value="response">可以先请对方说明清洁费的具体项目，并提供对应凭证。现在还不用急着表示同意。</p>
+    <blockquote class="say-this"><span>可以这样问对方</span><span class="say-content" data-value="wording" style="display:inline;font-size:inherit;color:inherit">这260元具体是哪些清洁项目？可以把对应凭证一起发给我核对吗？</span></blockquote>
+    <div class="why-row"><button class="why-button" id="home-why" aria-expanded="false" aria-controls="home-explanation"><span class="source-link" aria-hidden="true"><svg class="icon"><use href="#i-quote"/></svg></span><span data-why-label>为什么这样建议</span><svg class="icon chevron" aria-hidden="true"><use href="#i-down"/></svg></button><span>对应一处材料原句</span></div>
+    <div class="local-caution"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><p data-value="caution">260元只是材料中的拟扣款项，实际扣款与合法性均未核实。</p></div>
+   </article>
+   <aside class="source-slip" id="home-source" aria-label="与当前建议对应的材料原句">
+    <div class="slip-header"><span class="label-with-icon"><svg class="icon" aria-hidden="true"><use href="#i-quote"/></svg>材料里写着</span><span data-value="location">正文第3段</span></div>
+    <blockquote class="slip-quote" id="home-quote" tabindex="-1"><mark data-current-quote>拟扣除清洁费260元，具体项目和凭证另行提供。</mark></blockquote>
+    <div class="slip-foot"><span>押金结算备忘.docx</span><button data-full-source>查看完整示例材料</button></div>
+    <div class="source-explanation" id="home-explanation" hidden><strong>为什么先问这些</strong><p data-value="explanation">材料只写了“拟扣除”，还没有列出项目和凭证。先问清这两项，才有具体内容可以核对。</p><p class="evidence-boundary" data-value="boundary">材料记载待核实，不等于你已同意扣款，也不能单凭它判断是否合法。</p><button class="close-source" data-close-home>收起解释，回到建议</button></div>
+   </aside>
+  </div>
+      <div id="start-feedback" class="start-feedback" role="status" aria-live="polite" hidden></div>
+      <section id="scene-picker" class="scene-picker" hidden aria-labelledby="scene-heading">
+        <div class="section-heading"><h2 id="scene-heading" tabindex="-1">这件事与什么有关？</h2><button id="scene-cancel" class="quiet">取消</button></div>
+        <p class="muted">只用于帮助开始和收纳记录，可以随时修改。</p><div id="scene-options" class="scene-grid"></div>
+        <button id="scene-uncertain" class="uncertain-choice">不确定，直接描述</button>
+      </section>
+      <section class="home-bottom" aria-labelledby="recent-heading"><div class="recent-heading"><h2 id="recent-heading">继续上次的咨询</h2><p>当前访客的未完成记录</p></div><div id="recent" class="recent"></div></section>
+      <div class="home-help-row"><button id="home-help" class="quiet">使用帮助</button></div></div>
+    </section>
+    <section id="history" class="page history-page" hidden>
+      <header class="page-heading"><div class="section-heading"><h1>历史记录</h1><button id="history-help" class="quiet">使用帮助</button></div><p class="page-note">当前访客会话内保存，登录起24小时后清理，请及时导出。</p></header>
+      <div class="history-tools"><label class="scene-filter-label" for="history-scene">生活场景</label><div id="history-scenes" class="scene-filters"></div></div>
+      <div class="filters" role="group" aria-label="记录状态筛选"><button data-filter="all">全部状态</button><button data-filter="in_progress">进行中</button><button data-filter="completed">已完成</button></div>
+      <div id="history-list"></div>
+    </section>
+    <section id="workbench" class="workbench" hidden>
+      <header class="work-head">
+        <div class="title-group"><span class="work-location">工作台 · 当前咨询</span><button id="title" class="title-button" aria-label="修改咨询标题">新咨询</button><span id="save-status" class="save-status">已保存</span></div>
+        <div class="head-actions"><button id="category-open" class="quiet">待分类 · 修改</button><button id="complete" class="quiet">标记完成</button><button id="work-help" class="quiet">使用帮助</button></div>
+      </header>
+      <div class="work-tabs" role="tablist" aria-label="本次咨询">
+        <button id="tab-conversation" role="tab" data-work-view="conversation" aria-controls="conversation-panel" aria-selected="true">对话</button>
+        <button id="tab-materials" role="tab" data-work-view="materials" aria-controls="materials-panel" aria-selected="false" tabindex="-1">材料与事实<span id="fact-count"></span></button>
+        <button id="tab-results" role="tab" data-work-view="results" aria-controls="results-pane" aria-selected="false" tabindex="-1">建议与文稿</button>
+        <button id="tab-progress" role="tab" data-work-view="progress" aria-controls="progress-panel" aria-selected="false" tabindex="-1">跟进记录</button>
+      </div>
+      <div class="work-layout">
+        <section id="conversation-panel" class="conversation-panel" role="tabpanel" aria-labelledby="tab-conversation" data-work-panel="conversation">
+          <div id="next-step" class="next-step" hidden></div>
+          <div id="chat" class="chat" role="log" aria-live="polite"></div>
+          <div class="composer-wrap"><div class="composer-card">
+            <div class="composer-context" role="region" aria-label="附件状态与材料选项" tabindex="0"><div id="attachment-chips" class="chips"></div><div id="upload-feedback" role="status"></div>
+            <div id="upload-options" class="upload-options" hidden>
+              <div class="upload-top"><button id="choose-file" class="primary">选择文件</button><span>文字PDF / DOCX / UTF-8 TXT · 单份1MiB</span></div>
+              <input id="file" type="file" accept=".pdf,.docx,.txt" hidden>
+              <label>材料用途 <select id="kind"><option value="evidence">事实材料</option><option value="legal">法律参考资料 · 适用性未核</option></select></label>
+              <p class="upload-disclosure">生成或更新时，相关文字会发送至DeepSeek；请先去除不必要的敏感信息。</p>
+              <details><summary>查看读取范围与限制</summary><p>最多3份、合计2MiB；单份8000字符、总文字12000字符。PDF最多10页。DOCX读取正文与表格，按段落和表格位置引用，无原排版页码；图片文字、批注、页眉页脚、脚注尾注、文本框及嵌入附件不读取，含未处理修订须先接受或拒绝。压缩展开限8MiB、最多256部件，单部件2MiB。</p><p>不支持扫描件、OCR、截图或旧版.doc。请将.doc另存为.docx或文字PDF，不能只改后缀。TXT须UTF-8。</p></details>
+            </div>
+            </div><label class="composer-label" for="query">还有什么想说的？</label><textarea id="query" maxlength="500" rows="2" placeholder="描述你遇到的事情，以及希望解决什么"></textarea>
+            <div class="composer-actions"><button id="add-material" class="quiet" aria-expanded="false" aria-controls="upload-options">＋ 添加材料</button><span id="request-hint" class="muted" role="status"></span><button id="check-task" class="quiet" hidden>查询处理状态</button><button id="send" class="primary">发送</button></div>
+            <p class="composer-note">Ctrl / ⌘ + Enter 发送 · 每次最多500字</p>
+          </div></div>
+        </section>
+        <section id="materials-panel" class="reading-panel" role="tabpanel" aria-labelledby="tab-materials" data-work-panel="materials" hidden>
+          <div class="reading-content"><header class="panel-heading"><h2>材料里写了什么</h2><p class="muted">把材料中的说法、你的陈述与待核实内容分开看。</p></header>
+            <section class="content-section"><div class="section-heading"><h3>已添加材料</h3><button id="materials-add" class="quiet">添加材料</button></div><p class="muted">文字PDF / DOCX / UTF-8 TXT；单份1MiB，最多3份、合计2MiB，PDF最多10页。不支持OCR和截图。</p><div id="files"></div></section>
+            <section class="content-section"><h3 id="facts-heading">事实核对</h3><div id="facts-review"></div></section>
+          </div>
+        </section>
+        <section id="results-pane" class="results-pane" role="tabpanel" aria-labelledby="tab-results" data-work-panel="results" hidden>
+          <header class="results-head"><div><h2>现在可以先做什么</h2><p class="muted">查看已有建议、按需核对依据，再编辑沟通稿。</p><p id="result-state" class="result-state"></p></div><button id="analyze" class="primary">生成建议与沟通稿</button></header>
+          <section id="results-panel" class="results-scroll"><div id="results" class="reading-content"></div></section>
+        </section>
+        <section id="progress-panel" class="reading-panel" role="tabpanel" aria-labelledby="tab-progress" data-work-panel="progress" hidden>
+          <div class="reading-content"><header class="panel-heading"><h2>问过以后，接着整理</h2><p class="muted">沟通、收到回应或实际处理后，再来记录。文稿生成不代表已经发送，对方承诺不代表实际到账。</p><span id="progress-state" class="muted"></span></header>
+            <div id="goal-area" class="progress-block"></div><div id="action-area" class="progress-block"></div><div id="response-area" class="progress-block"></div><div id="outcome-area" class="progress-block"></div>
+            <div class="progress-capture"><button id="record-response" class="quiet">记录对方回应／未回复</button><button id="record-outcome" class="quiet">记录实际处理结果</button></div>
+          </div>
+        </section>
+        <section id="source-panel" class="source-panel" hidden aria-label="原文核对" tabindex="-1">
+          <div class="reading-content"><header class="source-head"><button id="source-back" class="quiet" data-navigation="source-return">返回引用位置</button><h2>原文核对</h2></header><div id="source-meta" class="source-meta"></div><blockquote id="source-quote" class="source-quote"></blockquote><p id="source-limitation" class="muted"></p><div id="source-content" class="source-content"></div></div>
+        </section>
+      </div>
+    </section>
+  </main>
+</div>
+<dialog class="source-dialog" id="demo-source-dialog" aria-labelledby="source-dialog-title"><header class="dialog-header"><div><h2 id="source-dialog-title">押金结算备忘.docx</h2><p>完整合成材料 · 3段正文 · 非真实用户材料</p></div><button class="icon-button" id="demo-close-dialog" data-navigation="home-demo" aria-label="关闭材料，回到原阅读位置"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></header><div class="dialog-body" id="demo-dialog-scroll"><article class="material-paper"><div class="material-line" data-paragraph="p1"><span>正文第1段</span><p data-text="p1">双方于2026年10月24日办理退租交接。</p></div><div class="material-line" data-paragraph="p2"><span>正文第2段</span><p data-text="p2">押金为3200元，双方约定在交接完成后7日内结算。</p></div><div class="material-line" data-paragraph="p3"><span>正文第3段</span><p data-text="p3">拟扣除清洁费260元，具体项目和凭证另行提供。</p></div></article><p class="dialog-note">材料记载不等于已核实的事实。第1段的交接日期待确认；“拟扣除”不代表已发生或已获同意；此演示未核验法律适用。</p></div></dialog>
+<div id="drawer-shade" class="drawer-shade" hidden></div>
+<aside id="drawer" class="drawer" hidden role="dialog" aria-modal="true" aria-labelledby="drawer-title"><div class="drawer-head"><h2 id="drawer-title">使用向导</h2><button id="drawer-close" class="quiet">关闭</button></div>
+  <section id="category-panel" hidden><p class="muted">用于收纳记录，不是专业法律定性。修改不会清空对话或调用模型。</p><div id="category-options" class="category-options"></div></section>
+  <section id="help-panel" hidden>
+    <div id="guide-answers"></div>
+    <details class="scope-help"><summary>能力范围、材料限制与保存期限</summary>
+      <p>可整理消费、一般合同、借贷欠款、租赁押金、物业相邻和一般财产损害问题。复杂婚姻继承、重大人身损害、劳动仲裁、刑事、行政或紧急期限仅整理已提供材料，定性和期限请咨询专业人士。</p>
+      <p>最多12条咨询，登录起24小时后清理；不保证永久保存或跨设备恢复。</p>
+      <p>每咨询最多6轮、每问500字；每访客25个模型任务，至少间隔10秒，全服务单任务、无自动重试。输出仍限1200 tokens，提示总字数650字、沟通稿240字；额度耗尽仍可阅读、保存和导出。</p>
+      <p>支持文字PDF、DOCX和UTF-8 TXT；DOCX只读取正文与表格，不提供页码，图片文字等排版附属内容不读取，修订须先处理。不支持旧版.doc、扫描件、OCR、截图或外链。DeepSeek辅助整理，程序核验引文原句，不证明事实真实或法律适用。</p><p>旧体验示例和视频使用预置家纺规则，与正式咨询独立，未覆盖新增上传问答及跟进流程。</p><p id="availability"></p>
+    </details>
+  </section>
+</aside>
+<div id="status" role="status" aria-live="polite"></div>
+</body>
+</html>
